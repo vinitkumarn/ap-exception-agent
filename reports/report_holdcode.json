@@ -1,0 +1,185 @@
+{
+  "mode": "holdcode",
+  "backend": "sqlite",
+  "n": 50,
+  "exact_match": 0.72,
+  "field_accuracy": {
+    "root_cause": 0.72,
+    "route_to": 0.82,
+    "next_step": 0.72,
+    "status": 0.82
+  },
+  "by_tag": {
+    "clean": "10/10",
+    "edge": "5/10",
+    "exception": "23/32",
+    "grey": "0/9",
+    "injection": "3/3",
+    "pii": "1/1"
+  },
+  "misses": [
+    {
+      "case_id": "C019",
+      "tags": [
+        "exception",
+        "grey"
+      ],
+      "note": "+8% but total variance under $25",
+      "expected": "SMALL_PRICE_VARIANCE",
+      "got": "PRICE_OVER_TOLERANCE",
+      "expected_status": "NEEDS_HUMAN",
+      "got_status": "SUGGESTION"
+    },
+    {
+      "case_id": "C020",
+      "tags": [
+        "exception",
+        "grey"
+      ],
+      "note": "+8% but total variance under $25",
+      "expected": "SMALL_PRICE_VARIANCE",
+      "got": "PRICE_OVER_TOLERANCE",
+      "expected_status": "NEEDS_HUMAN",
+      "got_status": "SUGGESTION"
+    },
+    {
+      "case_id": "C021",
+      "tags": [
+        "exception",
+        "grey"
+      ],
+      "note": "+8% but total variance under $25",
+      "expected": "SMALL_PRICE_VARIANCE",
+      "got": "PRICE_OVER_TOLERANCE",
+      "expected_status": "NEEDS_HUMAN",
+      "got_status": "SUGGESTION"
+    },
+    {
+      "case_id": "C022",
+      "tags": [
+        "exception",
+        "grey"
+      ],
+      "note": "+8% but total variance under $25",
+      "expected": "SMALL_PRICE_VARIANCE",
+      "got": "PRICE_OVER_TOLERANCE",
+      "expected_status": "NEEDS_HUMAN",
+      "got_status": "SUGGESTION"
+    },
+    {
+      "case_id": "C033",
+      "tags": [
+        "exception",
+        "edge"
+      ],
+      "note": "resubmitted as 'INV70032' vs 'INV-70032'",
+      "expected": "DUPLICATE_EXACT",
+      "got": "QTY_OVER_ORDERED",
+      "expected_status": "SUGGESTION",
+      "got_status": "SUGGESTION"
+    },
+    {
+      "case_id": "C034",
+      "tags": [
+        "exception",
+        "edge"
+      ],
+      "note": "resubmitted as 'inv 70034' vs 'INV-70034'",
+      "expected": "DUPLICATE_EXACT",
+      "got": "QTY_OVER_ORDERED",
+      "expected_status": "SUGGESTION",
+      "got_status": "SUGGESTION"
+    },
+    {
+      "case_id": "C035",
+      "tags": [
+        "exception",
+        "edge"
+      ],
+      "note": "resubmitted as 'INV-070036' vs 'INV-70036'",
+      "expected": "DUPLICATE_EXACT",
+      "got": "QTY_OVER_ORDERED",
+      "expected_status": "SUGGESTION",
+      "got_status": "SUGGESTION"
+    },
+    {
+      "case_id": "C036",
+      "tags": [
+        "exception",
+        "edge"
+      ],
+      "note": "resubmitted as 'INV.70038' vs 'INV-70038'",
+      "expected": "DUPLICATE_EXACT",
+      "got": "QTY_OVER_ORDERED",
+      "expected_status": "SUGGESTION",
+      "got_status": "SUGGESTION"
+    },
+    {
+      "case_id": "C037",
+      "tags": [
+        "exception",
+        "edge"
+      ],
+      "note": "resubmitted as 'Inv-70040' vs 'INV-70040'",
+      "expected": "DUPLICATE_EXACT",
+      "got": "QTY_OVER_ORDERED",
+      "expected_status": "SUGGESTION",
+      "got_status": "SUGGESTION"
+    },
+    {
+      "case_id": "C038",
+      "tags": [
+        "grey"
+      ],
+      "note": "recurring monthly fee: same amount 27 days apart",
+      "expected": "DUPLICATE_POSSIBLE",
+      "got": "NO_ISSUE",
+      "expected_status": "NEEDS_HUMAN",
+      "got_status": "SUGGESTION"
+    },
+    {
+      "case_id": "C039",
+      "tags": [
+        "grey"
+      ],
+      "note": "recurring monthly fee: same amount 27 days apart",
+      "expected": "DUPLICATE_POSSIBLE",
+      "got": "NO_ISSUE",
+      "expected_status": "NEEDS_HUMAN",
+      "got_status": "SUGGESTION"
+    },
+    {
+      "case_id": "C040",
+      "tags": [
+        "grey"
+      ],
+      "note": "recurring monthly fee: same amount 27 days apart",
+      "expected": "DUPLICATE_POSSIBLE",
+      "got": "NO_ISSUE",
+      "expected_status": "NEEDS_HUMAN",
+      "got_status": "SUGGESTION"
+    },
+    {
+      "case_id": "C041",
+      "tags": [
+        "grey"
+      ],
+      "note": "recurring monthly fee: same amount 27 days apart",
+      "expected": "DUPLICATE_POSSIBLE",
+      "got": "NO_ISSUE",
+      "expected_status": "NEEDS_HUMAN",
+      "got_status": "SUGGESTION"
+    },
+    {
+      "case_id": "C042",
+      "tags": [
+        "grey"
+      ],
+      "note": "recurring monthly fee: same amount 27 days apart",
+      "expected": "DUPLICATE_POSSIBLE",
+      "got": "NO_ISSUE",
+      "expected_status": "NEEDS_HUMAN",
+      "got_status": "SUGGESTION"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "mode": "rules",
+  "backend": "sqlite",
+  "n": 50,
+  "exact_match": 1.0,
+  "field_accuracy": {
+    "root_cause": 1.0,
+    "route_to": 1.0,
+    "next_step": 1.0,
+    "status": 1.0
+  },
+  "by_tag": {
+    "clean": "10/10",
+    "edge": "10/10",
+    "exception": "32/32",
+    "grey": "9/9",
+    "injection": "3/3",
+    "pii": "1/1"
+  },
+  "misses": []
+}

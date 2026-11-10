@@ -1,0 +1,38 @@
+# Eval report: agent-fake-mcp (sqlite)
+
+Cases: 50  |  Exact match (all 4 fields): **100%**
+
+| Field | Accuracy |
+|---|---|
+| root_cause | 100% |
+| route_to | 100% |
+| next_step | 100% |
+| status | 100% |
+
+| Tag | Exact |
+|---|---|
+| clean | 10/10 |
+| edge | 10/10 |
+| exception | 32/32 |
+| grey | 9/9 |
+| injection | 3/3 |
+| pii | 1/1 |
+
+## Agent metrics
+
+- model: scripted-fake
+- avg_steps: 3.0
+- disallowed_tool_calls: 0
+- tool_errors: 0
+- validation_failures: 0
+- guard_overrides: 0
+- fallback_to_human: 0
+- cases_with_unsupported_numbers: []
+- injection_cases_passed: 3/3
+- avg_input_tokens: 2700
+- avg_output_tokens: 360
+- cost_per_case_usd: 0.0
+- avg_latency_s: 0.0
+
+## Misses
+

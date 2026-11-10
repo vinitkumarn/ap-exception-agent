@@ -1,0 +1,8 @@
+anthropic>=0.40
+pydantic>=2.6
+python-dotenv>=1.0
+pytest>=8.0
+duckdb>=1.0
+mcp>=1.2
+# Milestone H only (Databricks backend):
+# databricks-sql-connector>=3.0
