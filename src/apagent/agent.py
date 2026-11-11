@@ -106,10 +106,10 @@ def run_agent(invoice_id: str, dl, client, settings: Settings | None = None,
     for step in range(1, s.max_steps + 1):
         res.steps = step
         try:
-            resp = client.messages.create(model=s.model, max_tokens=1500, system=SYSTEM_PROMPT,
-                                          tools=tools, tool_choice={"type": "any"}, messages=messages)
+            resp = client.messages.create(model=s.model, max_tokens=4000, system=SYSTEM_PROMPT,
+                                          tools=tools, tool_choice={"type": "auto"}, messages=messages)
         except Exception as e:  # API down, rate limit after SDK retries, etc. -> human, never crash
-            res.error = f"model_call_failed: {type(e).__name__}"
+            res.error = f"model_call_failed: {type(e).__name__}: {e}"[:300]
             audit.log("model_error", invoice_id=invoice_id, step=step, error=res.error)
             break
         res.input_tokens += resp.usage.input_tokens
