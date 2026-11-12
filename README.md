@@ -34,7 +34,7 @@ python -m apagent.evals --mode agent          # real Claude run
 python -m apagent.evals --mode agent --via-mcp
 python -m apagent.approve --approver yourname
 ```
-Switch databases by setting `APAGENT_BACKEND=sqlite|duckdb|databricks` in `.env`(SQLite and DuckDB are tested; the Databricks backend is written but not yet verified).
+Switch databases by setting `APAGENT_BACKEND=sqlite|duckdb|databricks` in `.env` (SQLite and DuckDB are tested; the Databricks backend is written but not yet verified).
 
 ## Results (50 synthetic labeled cases)
 | Mode | Exact match (root cause + route + next step + status) |
@@ -42,7 +42,8 @@ Switch databases by setting `APAGENT_BACKEND=sqlite|duckdb|databricks` in `.env`
 | Hold-code routing ("today's process") | 72% |
 | Rules-only engine | 100% (by design: the labels were seeded to test it) |
 | Agent, scripted fake model | 100% (plumbing check only, not model quality) |
-| Agent, Claude (claude-sonnet-5-5) | 100%: 0 unsupported numbers, 3/3 injection cases, ~2.2 steps and ~5 s per case | Agent, Claude via MCP | Same results as direct tool calls |
+| Agent, Claude (claude-sonnet-5-5) | 100%: 0 unsupported numbers, 3/3 injection cases, ~2.2 steps and ~5 s per case |
+| Agent, Claude via MCP | Same results as direct tool calls |
 
 Hold-code routing misses every duplicate (the ERP sees an over-billed quantity, not a duplicate)
 and every grey area. See `reports/` for full reports.
