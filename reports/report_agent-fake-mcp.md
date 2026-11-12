@@ -32,7 +32,7 @@ Cases: 50  |  Exact match (all 4 fields): **100%**
 - avg_input_tokens: 2700
 - avg_output_tokens: 360
 - cost_per_case_usd: 0.0
-- avg_latency_s: 0.0
+- avg_latency_s: 0.02
 
 ## Misses
 
