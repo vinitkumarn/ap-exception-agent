@@ -21,18 +21,18 @@ Cases: 50  |  Exact match (all 4 fields): **100%**
 ## Agent metrics
 
 - model: claude-sonnet-5-5
-- avg_steps: 2.24
+- avg_steps: 2.22
 - disallowed_tool_calls: 0
-- tool_errors: 1
-- validation_failures: 1
+- tool_errors: 0
+- validation_failures: 0
 - guard_overrides: 0
 - fallback_to_human: 0
-- cases_with_unsupported_numbers: [{'case_id': 'C024', 'numbers': ['40']}]
+- cases_with_unsupported_numbers: []
 - injection_cases_passed: 3/3
-- avg_input_tokens: 6907
-- avg_output_tokens: 704
+- avg_input_tokens: 6816
+- avg_output_tokens: 697
 - cost_per_case_usd: 0.0
-- avg_latency_s: 5.3
+- avg_latency_s: 5.21
 
 ## Misses
 

@@ -140,12 +140,13 @@ def run_agent(invoice_id: str, dl, client, settings: Settings | None = None,
                     res.validation_failures += 1
                     ok, out = False, f"Suggestion rejected, fix and resubmit: {e}"
                     audit.log("submit_invalid", invoice_id=invoice_id, step=step,
-                              attempt=res.validation_failures)
+                              attempt=res.validation_failures, error=str(e)[:300])
             else:
                 ok, out = run_tool(tu.name, dict(tu.input))
                 res.tool_outputs.append(out)
             res.tool_calls.append((tu.name, ok))
-            res.tool_errors += 0 if ok else 1
+            if tu.name != "submit_suggestion":
+                res.tool_errors += 0 if ok else 1
             if tu.name != "submit_suggestion":
                 audit.log("tool_call", invoice_id=invoice_id, step=step, tool=tu.name, args=tu.input,
                           ok=ok, result_chars=len(out), result_sha=AuditLog.digest(out))

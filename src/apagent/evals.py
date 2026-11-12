@@ -91,8 +91,10 @@ def run(mode: str, fake: bool = False, behavior: str = "good", limit: int | None
         out_path.parent.mkdir(exist_ok=True)
         try:
             with out_path.open("w") as out:
-                for c in cases:
+                for i, c in enumerate(cases, start=1):
                     r = run_agent(c.invoice_id, dl, client, s, audit, tool_runner=runner)
+                    print(f"[{i}/{len(cases)}] {c.case_id} {c.invoice_id} -> "
+                          f"{r.suggestion.get('root_cause')} ({r.status})", flush=True)
                     preds[c.case_id] = r.suggestion
                     out.write(json.dumps({"case_id": c.case_id, **r.to_dict()}, default=str) + "\n")
                     for k in ["steps", "disallowed_calls", "tool_errors", "validation_failures",

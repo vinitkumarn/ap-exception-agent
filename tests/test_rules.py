@@ -75,3 +75,7 @@ def test_priority_duplicate_wins():
           Finding("duplicate", "DUPLICATE_EXACT")]
     assert pick_primary(fs) == "DUPLICATE_EXACT"
     assert pick_primary([Finding("price", "PASS")]) == "NO_ISSUE"
+    
+def test_qty_check_gives_the_difference():
+    f = qty_check(100, 100, 60, "3-WAY")
+    assert f.details["over_received_by"] == "40"

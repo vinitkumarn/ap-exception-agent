@@ -26,6 +26,7 @@ def test_disallowed_tool_is_counted_and_loop_recovers(dl, tmp_path):
 def test_invalid_output_retries_once_then_goes_to_human(dl, tmp_path):
     r, _ = _run(dl, tmp_path, "invalid")
     assert r.validation_failures == 2
+    assert r.tool_errors == 0
     assert r.status == "NEEDS_HUMAN" and r.suggestion["needs_human_reason"] == "invalid_output_after_retry"
 
 

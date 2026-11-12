@@ -59,6 +59,10 @@ def qty_check(qty_billed_total, qty_ordered, qty_received, match_type, line_num=
     billed, ordered, received = D(qty_billed_total), D(qty_ordered), D(qty_received)
     details = {"qty_billed_total": str(billed), "qty_ordered": str(ordered),
                "qty_received": str(received), "match_type": match_type}
+    if billed > ordered:
+        details["over_ordered_by"] = str(billed - ordered)
+    if match_type == "3-WAY" and billed > received:
+        details["over_received_by"] = str(billed - received)
     if billed > ordered + policy.QTY_ORDERED_TOLERANCE:
         return Finding("qty", "QTY_OVER_ORDERED", line_num, details)
     if match_type == "3-WAY" and billed > received + policy.QTY_RECEIVED_TOLERANCE:
